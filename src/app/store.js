@@ -9,7 +9,7 @@ export const store = configureStore({
   reducer: {
     cart: cartSlice,
     filter: filterSlice,
-    products:productsSlice
+    products: productsSlice,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
 });
