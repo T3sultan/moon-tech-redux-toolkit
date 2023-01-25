@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import instance from "../../utils/axios.confiq";
 
 export const fetchProducts = async () => {
@@ -9,6 +9,9 @@ export const fetchProducts = async () => {
 };
 
 export const postProduct = async (productData) => {
- await instance.post("/product", productData);
+  await instance.post("/product", productData);
+};
 
+export const deleteProduct = async (id) => {
+  await instance.delete(`/product/${id}`);
 };
