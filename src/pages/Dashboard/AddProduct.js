@@ -3,32 +3,15 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addProduct,
-  togglePostSuccess,
-} from "../../features/products/productsSlice";
+
 
 const AddProduct = () => {
   const { register, handleSubmit, reset } = useForm();
-  const { isLoading, postSuccess, error, isError } = useSelector(
-    (state) => state.products
-  );
+  
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (isLoading) {
-      toast.loading("Posting...", { id: "addProduct" });
-    }
-    if (!isLoading && postSuccess) {
-      toast.success("Product Added", { id: "addProduct" });
-      dispatch(togglePostSuccess());
-      reset();
-    }
-    if (!isLoading && isError) {
-      toast.error(error, { id: "addProduct" });
-    }
-  }, [isLoading, isError, error, postSuccess]);
+
 
   const submit = (data) => {
     const product = {
@@ -44,7 +27,7 @@ const AddProduct = () => {
       ],
       spec: [],
     };
-    dispatch(addProduct(product));
+
 
     console.log(product);
   };
