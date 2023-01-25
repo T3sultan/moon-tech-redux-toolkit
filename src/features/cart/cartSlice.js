@@ -19,6 +19,7 @@ const cartSlice = createSlice({
           quantity: 1,
         };
         state.cart.push(product);
+        
       } else {
         selectedProduct.quantity += 1;
         state.cart
