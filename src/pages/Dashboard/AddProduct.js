@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { addProducts } from "../../features/products/productsSlice";
+import { addProduct } from "../../features/products/productsSlice";
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
@@ -20,7 +20,7 @@ const AddProduct = () => {
       ],
       spec: [],
     };
-    dispatch(addProducts(product));
+    dispatch(addProduct(product));
 
     console.log(product);
   };
